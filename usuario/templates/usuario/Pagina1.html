@@ -2,16 +2,12 @@
 <html lang="es">
 
 <head>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  {% load static %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="pagina1.css">
+  <link rel="stylesheet" href="{% static 'usuario/css/pagina1.css' %}">
   <title>BAJONEA</title>
-  
 </head>
 
 <body>
@@ -20,7 +16,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <!-- Agrega una clase "blink" al navbar-brand -->
-      <a class="navbar-brand blink" href="Pagina1.html">BAJONEA</a>
+      <a class="navbar-brand blink" href="{% url 'Pagina1' %}">BAJONEA</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,19 +24,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Pagina1.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'Pagina1' %}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Pagina2.html">Verduras</a>
+            <a class="nav-link" href="{% url 'Pagina2' %}">Verduras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Pagina3.html">Frutas</a>
+            <a class="nav-link" href="{% url 'Pagina3' %}">Frutas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Pagina4.html">Carnes</a>
+            <a class="nav-link" href="{% url 'Pagina4' %}">Carnes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Pagina5.html">Lácteos</a>
+            <a class="nav-link" href="{% url 'Pagina5' %}">Lácteos</a>
           </li>
         </ul>
         <div class="d-flex">
@@ -60,14 +56,14 @@
     });
     </script>
 
-   <!-- Formularios de Registro y Login -->
-   <div class="container">
+  <!-- Formularios de Registro y Login -->
+  <div class="container">
 
   
     <!-- Formularios de Registro y Login -->
     <div id="formulario-registro" style="display: none;">
       <h2>Registrarse</h2>
-      <form action="Pagina6.html" method="post" onsubmit="return validarRegistro()">
+      <form action="{% url 'Pagina6' %}" method="post" onsubmit="return validarRegistro()">
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre:</label>
           <input type="text" id="nombre" name="nombre" class="form-control" required>
@@ -95,7 +91,7 @@
   
     <div id="formulario-login" style="display: none;">
       <h2>Iniciar Sesión</h2>
-      <form action="Pagina6.html" method="post" onsubmit="return validarLogin()">
+      <form action="{% url 'Pagina6' %}" method="post" onsubmit="return validarLogin()">
         <div class="mb-3">
           <label for="correo" class="form-label">Correo:</label>
           <input type="email" id="correo" name="correo" class="form-control" required>
@@ -119,8 +115,8 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="Pagina2.html">
-          <img src="imag/cebollas 4.jpg" class="d-block w-100" alt="Oferta1" height="400" style="border: 10px solid black;">
+        <a href="{% url 'Pagina2' %}">
+          <img src="{% static 'usuario/img/cebollas 4.jpg' %}" class="d-block w-100" alt="Oferta1" height="400" style="border: 10px solid black;">
         </a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Las mejores Cebollas a mejor precios</h5>
@@ -128,8 +124,8 @@
         </div>
       </div>
       <div class="carousel-item">
-        <a href="Pagina3.html">
-          <img src="imag/platano 5.jpg" class="d-block w-100" alt="Oferta2" height="400" style="border: 10px solid black;">
+        <a href="{% url 'Pagina3' %}">
+          <img src="{% static 'usuario/img/platano 5.jpg' %}" class="d-block w-100" alt="Oferta2" height="400" style="border: 10px solid black;">
         </a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Las mejores Platanos a mejor precios</h5>
@@ -137,8 +133,8 @@
         </div>
       </div>
       <div class="carousel-item">
-        <a href="Pagina4.html">
-          <img src="imag/Carne vacuno 3.jpg" class="d-block w-100" alt="Oferta3" height="400" style="border: 10px solid black;">
+        <a href="{% url 'Pagina4' %}">
+          <img src="{% static 'usuario/img/Carne vacuno 3.jpg' %}" class="d-block w-100" alt="Oferta3" height="400" style="border: 10px solid black;">
         </a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Las mejores Carnes a mejores precios</h5>
@@ -146,8 +142,8 @@
         </div>
       </div>
       <div class="carousel-item">
-        <a href="Pagina5.html">
-          <img src="imag/Lacteos.jpg" class="d-block w-100" alt="Oferta4" height="400" style="border: 10px solid black;">
+        <a href="{% url 'Pagina5' %}">
+          <img src="{% static 'usuario/img/Lacteos.jpg' %}" class="d-block w-100" alt="Oferta4" height="400" style="border: 10px solid black;">
         </a>
         <div class="carousel-caption d-none d-md-block">
           <h5>Las mejores Leches a mejor precios</h5>
@@ -180,41 +176,41 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card border-primary">
-        <img src="imag/verduras.jpg" class="card-img-top" alt="Verduras" width="150" height="150">
+        <img src="{% static 'usuario/img/verduras.jpg' %}" class="card-img-top" alt="Verduras" width="150" height="150">
         <div class="card-body">
           <h5 class="card-title text-primary">Verduras</h5>
           <p class="card-text">Descubre la frescura y calidad de nuestras verduras en oferta. Lleva a tu mesa lo mejor de la naturaleza y disfruta de una alimentación saludable y deliciosa con precios que no te puedes perder.</p>
-          <a href="Pagina2.html" type="button" class="btn btn-primary">Ir a ver</a>
+          <a href="{% url 'Pagina2' %}" type="button" class="btn btn-primary">Ir a ver</a>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card border-success">
-        <img src="imag/Frutas.jpg" class="card-img-top" alt="Frutas" width="150" height="150">
+        <img src="{% static 'usuario/img/Frutas.jpg' %}" class="card-img-top" alt="Frutas" width="150" height="150">
         <div class="card-body">
           <h5 class="card-title text-success">Frutas</h5>
           <p class="card-text">Explora una explosión de sabores y colores en nuestra sección de frutas. Desde jugosas manzanas hasta exóticas frutas tropicales, encuentra las mejores ofertas y lleva a casa la frescura y el sabor en cada bocado.</p>
-          <a href="Pagina3.html" type="button" class="btn btn-success">Ir a ver</a>
+          <a href="{% url 'Pagina3' %}" type="button" class="btn btn-success">Ir a ver</a>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card border-danger">
-        <img src="imag/carne vacuno los tineos.jpg" class="card-img-top" alt="Carnes" width="150" height="150">
+        <img src="{% static 'usuario/img/carne vacuno los tineos.jpg' %}" class="card-img-top" alt="Carnes" width="150" height="150">
         <div class="card-body">
           <h5 class="card-title text-danger">Carnes</h5>
           <p class="card-text">Encuentra las ofertas más tentadoras en una variedad de carnes frescas y preparadas para satisfacer todos tus antojos culinarios y elevar tus comidas a otro nivel.</p>
-          <a href="Pagina4.html" type="button" class="btn btn-danger">Ir a ver</a>
+          <a href="{% url 'Pagina4' %}" type="button" class="btn btn-danger">Ir a ver</a>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card border-warning">
-        <img src="imag/Lacteos.jpg" class="card-img-top" alt="Lacteos" width="150" height="150">
+        <img src="{% static 'usuario/img/Lacteos.jpg' %}" class="card-img-top" alt="Lacteos" width="150" height="150">
         <div class="card-body">
           <h5 class="card-title text-warning">Lácteos</h5>
           <p class="card-text">Explora nuestra selección de lácteos frescos y deliciosos, desde cremosa leche hasta quesos artesanales. Encuentra los mejores precios en una variedad de productos lácteos que te ayudarán a crear platos deliciosos y nutritivos para toda la familia.</p>
-          <a href="Pagina5.html" type="button" class="btn btn-warning">Ir a ver</a>
+          <a href="{% url 'Pagina5' %}" type="button" class="btn btn-warning">Ir a ver</a>
         </div>
       </div>
     </div>
@@ -240,8 +236,8 @@
   <script src="obtenerFarmacias.js"></script>
 
   <!-- Scripts para Formularios -->
-  <script>
-   function mostrarFormularioRegistro() {
+<script>
+  function mostrarFormularioRegistro() {
     document.getElementById("formulario-registro").style.display = "flex"; /* Cambiar a flex para centrar verticalmente */
     document.getElementById("formulario-login").style.display = "none";
   }

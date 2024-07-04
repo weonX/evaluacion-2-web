@@ -19,7 +19,7 @@ function mostrarFarmacias(farmacias) {
     const farmaciasItem = document.createElement('div');
     farmaciasItem.classList.add('farmacias-item');
     farmaciasItem.innerHTML = `<h3>${farmacia.local_nombre}</h3>
-                               <p>${farmacia.local_direccion}</p>`;
+                              <p>${farmacia.local_direccion}</p>`;
     farmaciasList.appendChild(farmaciasItem);
   });
 
